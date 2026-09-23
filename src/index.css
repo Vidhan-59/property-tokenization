@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  /* Warm neutral / grey scale */
+  --color-neutral-50: #fafaf8;
+  --color-neutral-100: #f4f3ee;
+  --color-neutral-150: #eeece4;
+  --color-neutral-200: #e7e4da;
+  --color-neutral-300: #d4d0c2;
+  --color-neutral-400: #aca795;
+  --color-neutral-500: #837e6c;
+  --color-neutral-600: #625d4f;
+  --color-neutral-700: #47443a;
+  --color-neutral-800: #2e2c25;
+  --color-neutral-900: #1c1b16;
+
+  /* Gold accent scale */
+  --color-gold-50: #fdf9ee;
+  --color-gold-100: #f8efce;
+  --color-gold-200: #f0dd9c;
+  --color-gold-300: #e4c465;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #bb9327;
+  --color-gold-600: #9c7920;
+  --color-gold-700: #7a5e1a;
+  --color-gold-800: #574413;
+  --color-gold-900: #362a0c;
+
+  /* Restrained status accents */
+  --color-danger-50: #fbf0ee;
+  --color-danger-400: #b6543f;
+  --color-danger-600: #93402e;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-neutral-50);
+  color: var(--color-neutral-800);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--color-gold-200);
+}
+
+/* Slider styling shared by all range inputs in the configurator */
+input[type="range"].asset-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--color-neutral-200);
+  outline: none;
+}
+
+input[type="range"].asset-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--color-gold-400);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(28, 27, 22, 0.35);
+  cursor: pointer;
+  margin-top: -6px;
+}
+
+input[type="range"].asset-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--color-gold-400);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(28, 27, 22, 0.35);
+  cursor: pointer;
+}
+
+input[type="range"].asset-slider:disabled::-webkit-slider-thumb {
+  background: var(--color-neutral-400);
+  cursor: not-allowed;
+}
+
+input[type="range"].asset-slider::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 9999px;
+}
